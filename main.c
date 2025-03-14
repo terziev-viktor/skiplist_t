@@ -111,7 +111,7 @@ void skiplist_insert(skiplist_t * self, int value) {
     const uint8_t level_of_new_node = generate_level_for_new_node(self->max_num_levels, self->p);
     skiplist_node_t * new_node = malloc(sizeof(skiplist_node_t) * level_of_new_node);
     for (uint8_t level = 0; level < level_of_new_node; ++level) {
-        skiplist_node_t init = {.next = NULL, .prev = NULL, .level = level, .num_levels = level_of_new_node, .value = value};
+        const skiplist_node_t init = {.next = NULL, .prev = NULL, .level = level, .num_levels = level_of_new_node, .value = value};
         memcpy(new_node + level, &init, sizeof(skiplist_node_t));
     }
 
