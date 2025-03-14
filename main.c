@@ -190,7 +190,8 @@ int main(void) {
         skiplist_insert(list, rand() % 1000);
     }
 
-    printf("\nContains 222? %s\n", skiplist_contains(list, 222) ? "yes" : "no");
+    const bool contains = skiplist_contains(list, 222);
+    printf("\nContains 222? %s\n", contains ? "yes" : "no");
 
     skiplist_print(list);
     free_skiplist(list);
